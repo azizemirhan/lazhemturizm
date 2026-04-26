@@ -1,0 +1,12 @@
+{
+  "name": "lazhemturizm",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf:tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  }
+}

@@ -1,0 +1,4 @@
+# İsteğe bağlı: önbellek/edge başlıkları için ileride _headers eklerseniz, meta dosyalar
+.DS_Store
+.env
+.env.*
