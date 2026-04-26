@@ -1683,7 +1683,8 @@
       color: var(--forest-deep);
     }
 
-    .footer-brand .footer-logo-card {
+    /* Açık krem “kart” — footer ve mobil menü logosu */
+    .footer-logo-card {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -2037,6 +2038,18 @@
     .mobile-panel__head .logo__mark {
       background: var(--gold);
       color: var(--forest-deep);
+    }
+
+    .mobile-panel__head .footer-logo-card {
+      padding: 0.45rem 0.9rem;
+    }
+
+    .mobile-panel__head .footer-logo-card .logo__img {
+      height: 44px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      filter: none;
     }
 
     .mobile-panel__close {
@@ -5040,6 +5053,25 @@
       height: 11px;
     }
 
+    .tcard__actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.45rem;
+    }
+
+    .tcard__link-wa {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--moss);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .tcard__link-wa:hover {
+      color: var(--sage);
+    }
+
     /* ─── 7. Sub-results Header (More tours) ─── */
     .results__sub-head {
       display: flex;
@@ -5898,7 +5930,7 @@
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
-          <span>7/24 Rezervasyon Hattı</span>
+          <span>7/24 Bilgi Hattı</span>
         </span>
         <span class="topbar__sep"></span>
         <span class="topbar__pill">
@@ -5975,7 +6007,8 @@
             <path d="m21 21-4.35-4.35" />
           </svg>
         </button>
-        <a href="#" class="btn btn--ghost">Rezervasyon</a>
+        <a href="https://wa.me/904640000000?text=Merhaba%2C%20web%20sitenizden%20yaz%C4%B1yorum%2C%20turlar%20ve%20konaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+          class="btn btn--ghost" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href="https://wa.me/904640000000" class="btn btn--whats">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path
@@ -5998,7 +6031,7 @@
         <div class="mega__head">
           <span class="eyebrow">Karadeniz Rotaları</span>
           <h3>Bulutların <em>arasında</em> bir yolculuk</h3>
-          <p>Yaylalar, mistik göller, çay tepeleri ve tarih kokan sahillerle örülmüş 12 destinasyon, tek bir hayalde
+          <p>Yaylalar, mistik göller, çay tepeleri ve tarih kokan sahillerle örülmüş 12 destinasyon, tek bir hayalinizde
             buluşuyor.</p>
           <a href="#" class="mega__cta">
             Tüm destinasyonları keşfet
@@ -6202,7 +6235,7 @@
 
         <!-- LEFT: Text card -->
         <div class="hero__text">
-          <span class="hero__pill">7/24 Rezervasyon · 2014'ten beri Karadeniz</span>
+          <span class="hero__pill">7/24 Destek · 2014'ten beri Karadeniz</span>
 
           <div>
             <h1 class="hero__title">
@@ -6215,7 +6248,7 @@
             </p>
 
             <div class="hero__actions">
-              <a href="#" class="btn btn--primary">
+              <a href="detail.html" class="btn btn--primary">
                 Rotanı Keşfet
                 <svg viewBox="0 0 14 14" fill="none">
                   <path d="M2 7h10m0 0L7 2m5 5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
@@ -6324,7 +6357,7 @@
           <div class="slider__track">
 
             <!-- Card 1: Ayder Tour -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/ayder-yaylasi-hero.png')">
               </div>
@@ -6364,7 +6397,7 @@
             </a>
 
             <!-- Card 2: Pokut Bungalov -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/pokut-plateau-aerial.png')">
               </div>
@@ -6417,7 +6450,7 @@
                   <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" fill="none" stroke="currentColor"
                     stroke-width="2" />
                 </svg>
-                Hızlı Rezervasyon
+                Hızlı İletişim
               </span>
               <h3 class="tour-card--cta__title">Size <em>özel</em> bir rota planlayalım.</h3>
               <p>Numaranızı bırakın, bölge uzmanımız 10 dakika içinde sizi arasın. Ücretsiz danışmanlık.</p>
@@ -6434,7 +6467,7 @@
             </div>
 
             <!-- Card 4: Uzungöl -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/uzungol-lake.png')">
               </div>
@@ -6474,7 +6507,7 @@
             </a>
 
             <!-- Card 5: Honeymoon -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/luxury-bungalow-interior.png')">
               </div>
@@ -6520,7 +6553,7 @@
             </a>
 
             <!-- Card 6: Mavigöl -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/mavigol-mysterious.png')">
               </div>
@@ -6566,7 +6599,7 @@
             </a>
 
             <!-- Card 7: Batum -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/batum-seaside.png')">
               </div>
@@ -6613,7 +6646,7 @@
             </a>
 
             <!-- Card 8: Transfer -->
-            <a href="#" class="tour-card">
+            <a href="detail.html" class="tour-card">
               <div class="tour-card__img"
                 style="background-image:url('./images/karagol-snow.png')">
               </div>
@@ -6817,8 +6850,10 @@
               </div>
             </div>
             <div class="bn-ribbon__cta">
-              <a href="#" class="btn btn--dark">Müsaitlik Sor</a>
-              <a href="#" class="btn btn--gold">Rezerve Et</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Pokut%20Loft%20Bungalov%20i%C3%A7in%20m%C3%BCsaitlik%20sormak%20istiyorum."
+                class="btn btn--dark" target="_blank" rel="noopener noreferrer">Müsaitlik Sor</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Pokut%20Loft%20Bungalov%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20sormak%20istiyorum."
+                class="btn btn--gold" target="_blank" rel="noopener noreferrer">WhatsApp'tan Bilgi Al</a>
             </div>
           </div>
         </div>
@@ -6892,8 +6927,10 @@
               </div>
             </div>
             <div class="bn-ribbon__cta">
-              <a href="#" class="btn btn--dark">Müsaitlik Sor</a>
-              <a href="#" class="btn btn--gold">Rezerve Et</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Mavig%C3%B6l%20Glamping%20i%C3%A7in%20m%C3%BCsaitlik%20sormak%20istiyorum."
+                class="btn btn--dark" target="_blank" rel="noopener noreferrer">Müsaitlik Sor</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Mavig%C3%B6l%20Glamping%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20sormak%20istiyorum."
+                class="btn btn--gold" target="_blank" rel="noopener noreferrer">WhatsApp'tan Bilgi Al</a>
             </div>
           </div>
         </div>
@@ -6958,8 +6995,10 @@
               </div>
             </div>
             <div class="bn-ribbon__cta">
-              <a href="#" class="btn btn--dark">Müsaitlik Sor</a>
-              <a href="#" class="btn btn--gold">Rezerve Et</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Ayder%20Klasik%20Bungalov%20i%C3%A7in%20m%C3%BCsaitlik%20sormak%20istiyorum."
+                class="btn btn--dark" target="_blank" rel="noopener noreferrer">Müsaitlik Sor</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Ayder%20Klasik%20Bungalov%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20sormak%20istiyorum."
+                class="btn btn--gold" target="_blank" rel="noopener noreferrer">WhatsApp'tan Bilgi Al</a>
             </div>
           </div>
         </div>
@@ -7025,8 +7064,10 @@
                   class="bn-spec__value">1.800<em>m</em></span></div>
             </div>
             <div class="bn-ribbon__cta">
-              <a href="#" class="btn btn--dark">Müsaitlik Sor</a>
-              <a href="#" class="btn btn--gold">Rezerve Et</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Sal%20Suit%20Bungalov%20i%C3%A7in%20m%C3%BCsaitlik%20sormak%20istiyorum."
+                class="btn btn--dark" target="_blank" rel="noopener noreferrer">Müsaitlik Sor</a>
+              <a href="https://wa.me/904640000000?text=Merhaba%2C%20Sal%20Suit%20Bungalov%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20sormak%20istiyorum."
+                class="btn btn--gold" target="_blank" rel="noopener noreferrer">WhatsApp'tan Bilgi Al</a>
             </div>
           </div>
         </div>
@@ -7196,8 +7237,8 @@
                 <span class="bly__pricecard-note">Vergiler, transfer, masaj ve fotoğraf çekimi dahildir.</span>
               </div>
               <div class="bly__pricecard-cta">
-                <a href="#" class="btn btn--gold">Detayları Gör</a>
-                <a href="https://wa.me/904640000000" class="btn btn--whats">
+                <a href="detail.html" class="btn btn--gold">Detayları Gör</a>
+                <a href="https://wa.me/904640000000" class="btn btn--whats" target="_blank" rel="noopener noreferrer">
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
                       d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -7337,7 +7378,7 @@
             <div class="principle__num">06</div>
             <div class="principle__body">
               <h3 class="principle__title">Tek tuşla <em>iletişim</em>.</h3>
-              <p class="principle__lede">Rezervasyondan dönüş yolculuğuna kadar tek bir WhatsApp hattı. 7/24 açık,
+              <p class="principle__lede">İletişimden dönüş yolculuğuna kadar tek bir WhatsApp hattı. 7/24 açık,
                 ortalama 4 dakikada yanıt — bürokrasi yok, mağaza saati yok.</p>
             </div>
             <div class="principle__meta">
@@ -7726,13 +7767,14 @@
                       <span class="tcard__price-from">Kişi başı / dan</span>
                       <span class="tcard__price-amt">₺4.250<em>/ kişi</em></span>
                     </div>
-                    <a href="#" class="tcard__cta">
-                      Rezerve Et
-                      <svg viewBox="0 0 12 12" fill="none">
+                    <div class="tcard__actions">
+                    <a href="detail.html" class="tcard__cta">Detayı gör<svg viewBox="0 0 12 12" fill="none">
                         <path d="M2 6h8m0 0L7 3m3 3l-3 3" stroke="currentColor" stroke-width="1.6"
                           stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
+                      </svg></a>
+                    <a href="https://wa.me/904640000000?text=Merhaba%2C%20turlar%2Fkonaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                      class="tcard__link-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -7805,13 +7847,14 @@
                       <span class="tcard__price-amt">₺3.900<em>/ gece</em></span>
                       <span class="tcard__price-old">₺4.580</span>
                     </div>
-                    <a href="#" class="tcard__cta">
-                      Rezerve Et
-                      <svg viewBox="0 0 12 12" fill="none">
+                    <div class="tcard__actions">
+                    <a href="detail.html" class="tcard__cta">Detayı gör<svg viewBox="0 0 12 12" fill="none">
                         <path d="M2 6h8m0 0L7 3m3 3l-3 3" stroke="currentColor" stroke-width="1.6"
                           stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
+                      </svg></a>
+                    <a href="https://wa.me/904640000000?text=Merhaba%2C%20turlar%2Fkonaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                      class="tcard__link-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -7888,13 +7931,14 @@
                       <span class="tcard__price-from">Kişi başı / dan</span>
                       <span class="tcard__price-amt">₺2.450<em>/ kişi</em></span>
                     </div>
-                    <a href="#" class="tcard__cta">
-                      Rezerve Et
-                      <svg viewBox="0 0 12 12" fill="none">
+                    <div class="tcard__actions">
+                    <a href="detail.html" class="tcard__cta">Detayı gör<svg viewBox="0 0 12 12" fill="none">
                         <path d="M2 6h8m0 0L7 3m3 3l-3 3" stroke="currentColor" stroke-width="1.6"
                           stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    </a>
+                      </svg></a>
+                    <a href="https://wa.me/904640000000?text=Merhaba%2C%20turlar%2Fkonaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                      class="tcard__link-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -7975,10 +8019,14 @@
                       <span class="tcard__price-from">Kişi başı / dan</span>
                       <span class="tcard__price-amt">₺1.890<em>/ kişi</em></span>
                     </div>
-                    <a href="#" class="tcard__cta">Rezerve Et<svg viewBox="0 0 12 12" fill="none">
+                    <div class="tcard__actions">
+                    <a href="detail.html" class="tcard__cta">Detayı gör<svg viewBox="0 0 12 12" fill="none">
                         <path d="M2 6h8m0 0L7 3m3 3l-3 3" stroke="currentColor" stroke-width="1.6"
                           stroke-linecap="round" stroke-linejoin="round" />
                       </svg></a>
+                    <a href="https://wa.me/904640000000?text=Merhaba%2C%20turlar%2Fkonaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                      class="tcard__link-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -8043,10 +8091,14 @@
                       <span class="tcard__price-from">Gece / dan</span>
                       <span class="tcard__price-amt">₺3.250<em>/ gece</em></span>
                     </div>
-                    <a href="#" class="tcard__cta">Rezerve Et<svg viewBox="0 0 12 12" fill="none">
+                    <div class="tcard__actions">
+                    <a href="detail.html" class="tcard__cta">Detayı gör<svg viewBox="0 0 12 12" fill="none">
                         <path d="M2 6h8m0 0L7 3m3 3l-3 3" stroke="currentColor" stroke-width="1.6"
                           stroke-linecap="round" stroke-linejoin="round" />
                       </svg></a>
+                    <a href="https://wa.me/904640000000?text=Merhaba%2C%20turlar%2Fkonaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                      class="tcard__link-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -8104,10 +8156,14 @@
                       <span class="tcard__price-from">Çift / paket</span>
                       <span class="tcard__price-amt">₺18.500<em>/ çift</em></span>
                     </div>
-                    <a href="#" class="tcard__cta">Rezerve Et<svg viewBox="0 0 12 12" fill="none">
+                    <div class="tcard__actions">
+                    <a href="detail.html" class="tcard__cta">Detayı gör<svg viewBox="0 0 12 12" fill="none">
                         <path d="M2 6h8m0 0L7 3m3 3l-3 3" stroke="currentColor" stroke-width="1.6"
                           stroke-linecap="round" stroke-linejoin="round" />
                       </svg></a>
+                    <a href="https://wa.me/904640000000?text=Merhaba%2C%20turlar%2Fkonaklama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+                      class="tcard__link-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -8115,8 +8171,8 @@
             </div>
 
             <div class="results__more">
-              <a href="#" class="btn btn--dark">
-                Daha Fazla Sonuç Yükle
+              <a href="detail.html" class="btn btn--dark">
+                Tüm programı aç
                 <svg viewBox="0 0 14 14" fill="none">
                   <path d="M2 7h10m0 0L7 2m5 5l-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -8563,14 +8619,14 @@
         <span>Hızlı Soru</span>
       </li>
       <li>
-        <a href="#" class="bottom-nav__item">
+        <a href="https://wa.me/904640000000?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="bottom-nav__item" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <rect x="3" y="4" width="18" height="18" rx="2" />
             <line x1="16" y1="2" x2="16" y2="6" />
             <line x1="8" y1="2" x2="8" y2="6" />
             <line x1="3" y1="10" x2="21" y2="10" />
           </svg>
-          <span>Rezervasyon</span>
+          <span>Talep Oluştur</span>
         </a>
       </li>
       <li>
@@ -8589,17 +8645,8 @@
   <!-- ═══════════════ MOBILE SLIDE-OUT ═══════════════ -->
   <aside class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <div class="mobile-panel__head">
-      <a href="#" class="logo">
-        <span class="logo__mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M3 19l5-9 4 6 3-4 6 7H3z" fill="currentColor" />
-            <circle cx="17" cy="6" r="2" fill="currentColor" />
-          </svg>
-        </span>
-        <span class="logo__type">
-          <span class="logo__name">Lazhem</span>
-          <span class="logo__sub">Karadeniz Turizm</span>
-        </span>
+      <a href="index.html" class="logo logo--image-only footer-logo-card" aria-label="Lazhem Turizm Anasayfa">
+        <img src="logo.png" alt="Lazhem Turizm" class="logo__img" />
       </a>
       <button class="mobile-panel__close" id="closeMobilePanel" aria-label="Kapat">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -8669,15 +8716,15 @@
     </nav>
 
     <div class="mobile-panel__foot">
-      <a href="#" class="btn btn--whats">
+      <a href="https://wa.me/904640000000?text=Merhaba%2C%20bilgi%20almak%20istiyorum." class="btn btn--whats" target="_blank" rel="noopener noreferrer">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
           <path
             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487 2.981 1.286 2.981.858 3.518.804.537-.054 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
         </svg>
         WhatsApp ile İletişim
       </a>
-      <a href="#" class="btn btn--ghost" style="color:var(--paper); border-color:rgba(201,169,97,0.3);">Online
-        Rezervasyon</a>
+      <a href="tel:+904640000000" class="btn btn--ghost" style="color:var(--paper); border-color:rgba(201,169,97,0.3);">Telefonla
+        Ara</a>
 
       <div class="mobile-panel__contact">
         <span>7/24 Destek</span>
