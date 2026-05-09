@@ -1,0 +1,36 @@
+============ Mail ============
+
+Mail : admin@rizebalayipaketi.com
+Şifre : hNJTj(0sO]@}!UoS
+Gelen Posta Sunucusu: mail.rizebalayipaketi.com
+IMAP Port: 993 
+POP3 Port: 995
+Giden Sunucu: mail.rizebalayipaketi.com
+SMTP Port: 465
+
+Mail : info@rizebalayipaketi.com
+Şifre : VfS83.GX5y?4R&m?
+Gelen Posta Sunucusu: mail.rizebalayipaketi.com
+IMAP Port: 993 
+POP3 Port: 995
+Giden Sunucu: mail.rizebalayipaketi.com
+SMTP Port: 465
+
+============ FTP ============
+
+FTP Kullanıcı Adı: webmaster@rizebalayipaketi.com
+FTP sunucusu: ftp.rizebalayipaketi.com
+FTP & açık FTPS portu:  21
+Şifre : qygfaj-2biQzu-kitjoz
+
+============ CPANEL ============
+
+Şifre : w3-vEY,hP^qZUCvL
+Kullanıcı Adı: rizebalayipaketi
+Giriş URL :  https://cpanel.rizebalayipaketi.com
+
+============ WordPress ============
+
+Giriş URL :  https://rizebalayipaketi.com/wp-admin
+Kullanıcı Adı : lazhemturizm
+Şifre : 53aaf723++
