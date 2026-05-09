@@ -1,0 +1,103 @@
+
+/* ═══════════════ CONTACT PAGE STYLES ═══════════════ */
+.contact-hero {
+    padding: 140px 0 80px;
+    background: var(--paper);
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 80px var(--gutter);
+}
+
+@media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+}
+
+.contact-info__item {
+    margin-bottom: 40px;
+}
+
+.contact-info__item h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--forest);
+    margin-bottom: 10px;
+}
+
+.contact-info__item p, .contact-info__item a {
+    font-size: 1.1rem;
+    color: var(--ink);
+    opacity: 0.8;
+    text-decoration: none;
+    display: block;
+}
+
+.contact-form-card {
+    background: #fff;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(15, 42, 29, 0.05);
+}
+
+.contact-form-card h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--forest);
+    margin-bottom: 30px;
+}
+
+.contact-form__group {
+    margin-bottom: 25px;
+}
+
+.contact-form__group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+}
+
+.contact-form__group input, .contact-form__group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form__group input:focus, .contact-form__group textarea:focus {
+    border-color: var(--gold);
+    outline: none;
+}
+
+.contact-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-socials a {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--forest);
+    color: var(--paper);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.contact-socials a:hover {
+    background: var(--gold);
+}
