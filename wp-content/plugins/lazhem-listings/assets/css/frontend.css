@@ -1,0 +1,26 @@
+.lazhem-detail{background:#faf7ef;color:#0a1410;padding-bottom:40px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;padding:40px 0}
+.eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#9c7e3f}
+.meta-row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.pill{display:inline-block;border:1px solid #c9a961;padding:4px 10px;border-radius:999px;font-size:12px}
+.price{font-size:28px;font-weight:700;margin:16px 0}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.lazhem-btn{display:inline-block;padding:12px 16px;border:1px solid #0f2a1d;border-radius:8px;text-decoration:none;color:#0f2a1d}
+.lazhem-btn-primary{background:#0f2a1d;color:#fff;width:100%;border:none}
+.lazhem-btn-whatsapp{background:#25D366;color:#fff;border-color:#25D366}
+.content{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:20px 0}
+.card,.step{border:1px solid #e6ddc8;background:#fff;padding:14px;margin-bottom:10px;border-radius:10px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.lazhem-inquiry-form{background:#fff;border:1px solid #e6ddc8;padding:16px;border-radius:10px}
+.lazhem-form-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px}
+.lazhem-form-grid input,.lazhem-form-grid textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px}
+.lazhem-kvkk{display:block;font-size:13px;margin:10px 0}
+.lazhem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.lazhem-card{background:#fff;padding:10px;border:1px solid #e6ddc8;border-radius:10px}
+.lazhem-related{display:grid;gap:8px;margin-bottom:20px}
+.lazhem-related-item{padding:10px;background:#fff;border:1px solid #e6ddc8;border-radius:8px;display:block}
+.lazhem-notice{max-width:1200px;margin:14px auto;padding:12px 16px;border-radius:8px}
+.lazhem-notice.success{background:#e9f8ee;color:#176533}
+.lazhem-notice.error{background:#fbeaea;color:#8a1f1f}
+@media (max-width: 900px){.hero,.content,.lazhem-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}

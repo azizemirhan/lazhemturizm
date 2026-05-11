@@ -35,16 +35,16 @@ if (!function_exists('getenv_docker')) {
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'rizebalayipaketi_shs' );
+define( 'DB_NAME', getenv_docker( 'WORDPRESS_DB_NAME', getenv_docker( 'MYSQL_DATABASE', 'wordpress' ) ) );
 
 /** Database username */
-define( 'DB_USER', 'rizebalayipaketi_shsn' );
+define( 'DB_USER', getenv_docker( 'WORDPRESS_DB_USER', getenv_docker( 'MYSQL_USER', 'wordpress' ) ) );
 
 /** Database password */
-define( 'DB_PASSWORD', 'ŞİFREYİ_BURAYA_YAZIN' );
+define( 'DB_PASSWORD', getenv_docker( 'WORDPRESS_DB_PASSWORD', getenv_docker( 'MYSQL_PASSWORD', '' ) ) );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', getenv_docker( 'WORDPRESS_DB_HOST', 'db' ) );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );

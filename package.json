@@ -4,7 +4,11 @@
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "cf:tail": "wrangler tail"
+    "cf:tail": "wrangler tail",
+    "serve": "npm run serve:demo",
+    "serve:demo": "npx --yes http-server ./public -p 8080 -a 127.0.0.1 -c-1",
+    "wp:up": "docker compose up -d",
+    "wp:down": "docker compose down"
   },
   "devDependencies": {
     "wrangler": "^4.45.0"
