@@ -8,9 +8,10 @@
     "serve": "npm run serve:demo",
     "serve:demo": "npx --yes http-server ./public -p 8080 -a 127.0.0.1 -c-1",
     "wp:up": "docker compose up -d",
-    "wp:down": "docker compose down"
+    "wp:down": "docker compose down",
+    "preview": "wrangler dev"
   },
   "devDependencies": {
-    "wrangler": "^4.45.0"
+    "wrangler": "^4.91.0"
   }
 }
