@@ -1,6 +1,6 @@
-    /* ───────────────────────── DESIGN TOKENS ───────────────────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ DESIGN TOKENS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     :root {
-      /* Colors — Karadeniz palette */
+      /* Colors â€” Karadeniz palette */
       --forest: #0F2A1D;
       --forest-deep: #061A11;
       --forest-soft: #1B3A28;
@@ -24,6 +24,7 @@
       /* Typography */
       --font-display: 'Fraunces', 'Times New Roman', serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-hand: 'Caveat', cursive;
 
       /* Layout */
       --container: 1440px;
@@ -43,7 +44,7 @@
       --topo: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800' fill='none' stroke='%23C9A961' stroke-width='0.6' opacity='0.5'><path d='M0 200 Q 200 100 400 200 T 800 200'/><path d='M0 280 Q 200 180 400 280 T 800 280'/><path d='M0 360 Q 200 260 400 360 T 800 360'/><path d='M0 440 Q 200 340 400 440 T 800 440'/><path d='M0 520 Q 200 420 400 520 T 800 520'/><path d='M0 600 Q 200 500 400 600 T 800 600'/><circle cx='400' cy='400' r='40' /><circle cx='400' cy='400' r='80' /><circle cx='400' cy='400' r='130' /></svg>");
     }
 
-    /* ───────────────────────── RESET ───────────────────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ RESET â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     *,
     *::before,
     *::after {
@@ -66,6 +67,22 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
+      display: flex; /* Added for sticky footer */
+      flex-direction: column; /* Added for sticky footer */
+      min-height: 100vh; /* Added for sticky footer */
+    }
+
+    #page,
+    .site {
+      max-width: none;
+      width: 100%;
+      flex: 1 0 auto; /* Added for sticky footer */
+    }
+
+    h1 em, h2 em, h3 em {
+      font-family: var(--font-hand);
+      font-style: normal;
+      font-weight: 500;
     }
 
     img,
@@ -104,11 +121,11 @@
       padding: 0 var(--gutter);
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    HEADER
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-    /* Topbar — small announcement strip */
+    /* Topbar â€” small announcement strip */
     .topbar {
       background: var(--forest-deep);
       color: var(--bone);
@@ -218,7 +235,7 @@
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
-      height: 100px;
+      height: 86px;
       gap: 2rem;
       max-width: var(--container);
       margin: 0 auto;
@@ -227,7 +244,7 @@
     }
 
     .site-header.scrolled .header__inner {
-      height: 80px;
+      height: 72px;
     }
 
     /* Logo */
@@ -478,7 +495,7 @@
       transform: translateY(-6.5px) rotate(-45deg);
     }
 
-    /* ───────────────────────── MEGA MENU ───────────────────────── */
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ MEGA MENU â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .mega {
       position: absolute;
       top: 100%;
@@ -730,7 +747,7 @@
     .svc-feature__img {
       position: absolute;
       inset: 0;
-      background: url('../images/pokut-plateau-aerial.png') center/cover;
+      background: url('./images/pokut-plateau-aerial.png') center/cover;
     }
 
     .svc-feature::after {
@@ -797,9 +814,9 @@
       visibility: visible;
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    HERO SECTION
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .hero {
       padding: 1.5rem var(--gutter) 2rem;
       position: relative;
@@ -886,14 +903,15 @@
       letter-spacing: -0.035em;
       color: var(--forest);
       margin: 0.5rem 0 1.2rem;
-      max-width: 560px;
     }
 
     .hero__title em {
-      font-style: italic;
-      font-weight: 400;
+      font-family: var(--font-hand);
+      font-style: normal;
+      font-weight: 500;
       color: var(--sage);
-      font-variation-settings: "opsz" 144, "SOFT" 80;
+      font-size: 1.1em;
+      vertical-align: baseline;
     }
 
     .hero__title .ornament {
@@ -919,7 +937,6 @@
       font-size: clamp(0.98rem, 1.05vw, 1.08rem);
       color: var(--ink-soft);
       line-height: 1.6;
-      max-width: 460px;
       margin-bottom: 1.5rem;
     }
 
@@ -938,7 +955,7 @@
     .hero__meta {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
       margin-top: 2rem;
       padding-top: 1.5rem;
       border-top: 1px solid rgba(15, 42, 29, 0.1);
@@ -995,7 +1012,7 @@
     .hero__visual-img {
       position: absolute;
       inset: 0;
-      background-image: url('../images/rize-ayder-hero.png');
+      background-image: url('./images/ayder-yaylasi-hero.png');
       background-size: cover;
       background-position: center;
       z-index: 0;
@@ -1083,9 +1100,9 @@
       text-transform: uppercase;
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    TOUR SLIDER
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .slider-section {
       padding: 1.5rem var(--gutter) 4rem;
     }
@@ -1511,15 +1528,16 @@
       display: none;
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    FOOTER
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .site-footer {
       background: var(--forest);
       color: var(--cream);
       position: relative;
       overflow: hidden;
-      margin-top: 5rem;
+      margin-top: 0;
+      flex-shrink: 0; /* Added for sticky footer */
     }
 
     .site-footer::before {
@@ -1667,7 +1685,7 @@
       color: var(--forest-deep);
     }
 
-    /* Açık krem “kart” — footer ve mobil menü logosu */
+    /* AÃ§Ä±k krem â€œkartâ€ â€” footer ve mobil menÃ¼ logosu */
     .footer-logo-card {
       display: inline-flex;
       align-items: center;
@@ -1875,9 +1893,9 @@
       font-weight: 600;
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    MOBILE BOTTOM NAV
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .bottom-nav {
       display: none;
       position: fixed;
@@ -1972,9 +1990,9 @@
       text-transform: uppercase;
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    MOBILE SLIDE-OUT MENU
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .mobile-panel {
       position: fixed;
       inset: 0;
@@ -2144,9 +2162,9 @@
       color: var(--gold-light);
     }
 
-    /* ─────────────────────────────────────────────────────────────────
+    /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    RESPONSIVE
-   ───────────────────────────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     @media (max-width: 1180px) {
       .nav-link {
         padding: 0.7rem 0.7rem;
@@ -2183,7 +2201,7 @@
       }
 
       body {
-        padding-bottom: 78px;
+        padding-bottom: 0; /* Changed from 78px to remove white space */
       }
 
       /* Hero */
@@ -2199,7 +2217,7 @@
         min-height: auto;
       }
 
-      /* Slider — 2 cards visible */
+      /* Slider â€” 2 cards visible */
       .tour-card {
         flex-basis: calc((100% - 1.25rem) / 2);
       }
@@ -2298,7 +2316,7 @@
         display: none;
       }
 
-      /* Slider — 1.15 cards visible */
+      /* Slider â€” 1.15 cards visible */
       .slider__head {
         flex-direction: column;
         align-items: flex-start;
@@ -2359,7 +2377,7 @@
       }
     }
 
-    /* ───── Reduced motion ───── */
+    /* â”€â”€â”€â”€â”€ Reduced motion â”€â”€â”€â”€â”€ */
     @media (prefers-reduced-motion: reduce) {
 
       *,
@@ -2370,10 +2388,10 @@
       }
     }
 
-    /* ═══════════════════════════════════════════════════════════════
-   TOKENS — Ana sitenizin :root değişkenlerinden almakta.
-   Dosyaya entegre ederken bu blok zaten varsa atlayın.
-   ═══════════════════════════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TOKENS â€” Ana sitenizin :root deÄŸiÅŸkenlerinden almakta.
+   Dosyaya entegre ederken bu blok zaten varsa atlayÄ±n.
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     :root {
       --forest: #0F2A1D;
       --forest-deep: #061A11;
@@ -2536,11 +2554,11 @@
     }
 
 
-    /* ╔══════════════════════════════════════════════════════════════╗
-   ║                                                              ║
-   ║       SECTION 1  ·  BUNGALOV — EDITORIAL SPREAD              ║
-   ║                                                              ║
-   ╚══════════════════════════════════════════════════════════════╝ */
+    /* â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+   â•‘                                                              â•‘
+   â•‘       SECTION 1  Â·  BUNGALOV â€” EDITORIAL SPREAD              â•‘
+   â•‘                                                              â•‘
+   â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     .bn {
       padding: 6rem var(--gutter) 5rem;
@@ -2624,7 +2642,7 @@
       font-weight: 400;
     }
 
-    /* TAB STRIP — pill style */
+    /* TAB STRIP â€” pill style */
     .bn__tabs {
       display: flex;
       gap: 0.5rem;
@@ -2888,7 +2906,7 @@
       height: 12px;
     }
 
-    /* SPEC RIBBON — full-width info bar */
+    /* SPEC RIBBON â€” full-width info bar */
     .bn__ribbon {
       display: grid;
       grid-template-columns: 220px 1fr auto;
@@ -3001,7 +3019,7 @@
       gap: 0.6rem;
     }
 
-    /* Showcase variants — only active is displayed */
+    /* Showcase variants â€” only active is displayed */
     .bn-showcase {
       display: none;
     }
@@ -3024,11 +3042,11 @@
     }
 
 
-    /* ╔══════════════════════════════════════════════════════════════╗
-   ║                                                              ║
-   ║       SECTION 2  ·  BALAYI — LOVE LETTER STYLE              ║
-   ║                                                              ║
-   ╚══════════════════════════════════════════════════════════════╝ */
+    /* â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+   â•‘                                                              â•‘
+   â•‘       SECTION 2  Â·  BALAYI â€” LOVE LETTER STYLE              â•‘
+   â•‘                                                              â•‘
+   â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     .bly {
       padding: 6rem var(--gutter);
@@ -3066,7 +3084,7 @@
       z-index: 1;
     }
 
-    /* HEADER — centered editorial */
+    /* HEADER â€” centered editorial */
     .bly__head {
       text-align: center;
       margin-bottom: 4rem;
@@ -3306,7 +3324,7 @@
 
     /* Day list */
     .bly__days {
-      list-style: none; /* <ol> varsayılan 1,2,3,4 artık gözükmez; çizgi+daire ile çakışmayı engeller */
+      list-style: none; /* <ol> varsayÄ±lan 1,2,3,4 artÄ±k gÃ¶zÃ¼kmez; Ã§izgi+daire ile Ã§akÄ±ÅŸmayÄ± engeller */
       display: flex;
       flex-direction: column;
       position: relative;
@@ -3522,11 +3540,11 @@
     }
 
 
-    /* ╔══════════════════════════════════════════════════════════════╗
-   ║                                                              ║
-   ║       SECTION 3  ·  NEDEN LAZHEM — MANIFEST/INDEX            ║
-   ║                                                              ║
-   ╚══════════════════════════════════════════════════════════════╝ */
+    /* â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+   â•‘                                                              â•‘
+   â•‘       SECTION 3  Â·  NEDEN LAZHEM â€” MANIFEST/INDEX            â•‘
+   â•‘                                                              â•‘
+   â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     .nd {
       padding: 6rem var(--gutter) 5rem;
@@ -3762,7 +3780,7 @@
       height: 22px;
     }
 
-    /* CTA — final manifesto closer */
+    /* CTA â€” final manifesto closer */
     .nd__cta {
       margin-top: 3rem;
       padding: 2.5rem 2.75rem;
@@ -3830,9 +3848,9 @@
     }
 
 
-    /* ═══════════════════════════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESPONSIVE
-   ═══════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     @media (max-width: 1024px) {
 
@@ -3997,9 +4015,9 @@
       }
     }
 
-    /* ═══════════════════════════════════════════════════════════════
-   TOKENS — Ana sitede zaten varsa atlayın
-   ═══════════════════════════════════════════════════════════════ */
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TOKENS â€” Ana sitede zaten varsa atlayÄ±n
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
     :root {
       --forest: #0F2A1D;
       --forest-deep: #061A11;
@@ -4159,11 +4177,11 @@
     }
 
 
-    /* ╔══════════════════════════════════════════════════════════════╗
-   ║                                                              ║
-   ║     SECTION 1  ·  TRAVEL LIST  ( Yacht-style )              ║
-   ║                                                              ║
-   ╚══════════════════════════════════════════════════════════════╝ */
+    /* â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+   â•‘                                                              â•‘
+   â•‘     SECTION 1  Â·  TRAVEL LIST  ( Yacht-style )              â•‘
+   â•‘                                                              â•‘
+   â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     .tl {
       padding: 3.5rem var(--gutter) 5rem;
@@ -4176,7 +4194,7 @@
       margin: 0 auto;
     }
 
-    /* ─── 1. Search Bar ─── */
+    /* â”€â”€â”€ 1. Search Bar â”€â”€â”€ */
     .tl-search {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
@@ -4303,7 +4321,7 @@
       display: none;
     }
 
-    /* ─── 2. Breadcrumb + Header ─── */
+    /* â”€â”€â”€ 2. Breadcrumb + Header â”€â”€â”€ */
     .tl-crumb {
       display: flex;
       align-items: center;
@@ -4358,14 +4376,14 @@
     }
 
     .tl-title__num::before {
-      content: '“';
+      content: 'â€œ';
     }
 
     .tl-title__num::after {
-      content: '”';
+      content: 'â€';
     }
 
-    /* ─── 3. Layout Split: Filters | Results ─── */
+    /* â”€â”€â”€ 3. Layout Split: Filters | Results â”€â”€â”€ */
     .tl-layout {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -4373,7 +4391,7 @@
       align-items: start;
     }
 
-    /* ─── 4. Filters Panel ─── */
+    /* â”€â”€â”€ 4. Filters Panel â”€â”€â”€ */
     .filters {
       background: var(--paper);
       border: 1px solid var(--line);
@@ -4693,7 +4711,7 @@
       font-size: 0.78rem;
     }
 
-    /* ─── 5. Results Panel ─── */
+    /* â”€â”€â”€ 5. Results Panel â”€â”€â”€ */
     .results {
       min-width: 0;
     }
@@ -4764,7 +4782,7 @@
       height: 14px;
     }
 
-    /* ─── 6. Tour Cards Grid ─── */
+    /* â”€â”€â”€ 6. Tour Cards Grid â”€â”€â”€ */
     .tcards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -5056,7 +5074,7 @@
       color: var(--sage);
     }
 
-    /* ─── 7. Sub-results Header (More tours) ─── */
+    /* â”€â”€â”€ 7. Sub-results Header (More tours) â”€â”€â”€ */
     .results__sub-head {
       display: flex;
       align-items: center;
@@ -5122,11 +5140,11 @@
     }
 
 
-    /* ╔══════════════════════════════════════════════════════════════╗
-   ║                                                              ║
-   ║     SECTION 2  ·  CTA BAND  (Cinematic)                     ║
-   ║                                                              ║
-   ╚══════════════════════════════════════════════════════════════╝ */
+    /* â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+   â•‘                                                              â•‘
+   â•‘     SECTION 2  Â·  CTA BAND  (Cinematic)                     â•‘
+   â•‘                                                              â•‘
+   â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     .cta-band {
       padding: 0 var(--gutter);
@@ -5437,11 +5455,11 @@
     }
 
 
-    /* ╔══════════════════════════════════════════════════════════════╗
-   ║                                                              ║
-   ║     SECTION 3  ·  FEATURED BLOG                              ║
-   ║                                                              ║
-   ╚══════════════════════════════════════════════════════════════╝ */
+    /* â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+   â•‘                                                              â•‘
+   â•‘     SECTION 3  Â·  FEATURED BLOG                              â•‘
+   â•‘                                                              â•‘
+   â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     .blog {
       padding: 5rem var(--gutter) 6rem;
@@ -5758,9 +5776,9 @@
     }
 
 
-    /* ═══════════════════════════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    RESPONSIVE
-   ═══════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     @media (max-width: 1180px) {
       .tcards {
@@ -5893,272 +5911,242 @@
       }
     }
 
+    /* ────────────────────────── CONTACT PAGE ────────────────────────── */
 
-/* Full width fix */
-body, html {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-}
+    .contact-page {
+      padding-bottom: 0;
+    }
 
-.topbar, .site-header, .site-footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
+    .contact-hero { background: var(--paper); padding: clamp(80px, 10vw, 120px) 0 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
 
-/* ═══════════════ ABOUT PAGE STYLES ═══════════════ */
-.about-hero {
-    padding: 120px 0 80px;
-    background: var(--paper);
-    text-align: center;
-}
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--topo);
+      background-size: 800px;
+      background-position: center;
+      opacity: 0.15;
+      pointer-events: none;
+    }
 
-.about-hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: var(--forest);
-    max-width: 900px;
-    margin: 0 auto 2rem;
-}
+    .contact-hero__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
 
-.about-hero h1 em {
-    font-style: italic;
-    color: var(--sage);
-    font-variation-settings: "opsz" 144, "SOFT" 80;
-}
+    .contact-breadcrumb { font-family: var(--font-body); font-size: 0.8rem; color: var(--ink); opacity: 0.65; margin-bottom: 1.5rem; display: block; }
 
-.about-story {
-    padding: 80px 0;
-    background: var(--paper);
-}
+    .contact-breadcrumb a {
+      color: var(--sage);
+      transition: color var(--t-fast);
+    }
 
-.about-story__grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 100px;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--gutter);
-    align-items: center;
-}
+    .contact-breadcrumb a:hover {
+      color: var(--gold-deep);
+    }
 
-@media (max-width: 1024px) {
-    .about-story__grid { grid-template-columns: 1fr; gap: 40px; }
-}
+    .contact-breadcrumb__sep {
+      opacity: 0.4;
+    }
 
-.about-story__content h2 {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    color: var(--forest);
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-}
+    .contact-hero__eyebrow { display: block; margin-bottom: 1rem; color: var(--gold-deep); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
 
-.about-story__content p {
-    font-size: 1.15rem;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
-}
+    .contact-hero__title { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); color: var(--forest); line-height: 1.05; letter-spacing: -0.03em; margin: 0; }
 
-.about-story__visual img {
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
+    .contact-hero__title em {
+      font-style: italic;
+      color: var(--sage);
+    }
 
-.principles {
-    padding: 100px 0;
-    background: var(--forest-deep);
-    color: var(--bone);
-}
+    .contact-hero__lede { margin: 1.75rem auto 0; max-width: 640px; font-size: 1.15rem; line-height: 1.65; color: var(--ink); opacity: 0.85; }
 
-.principles__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--gutter);
-}
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; max-width: var(--container); margin: 0 auto; padding: 50px var(--gutter) 80px;
+      align-items: start;
+    }
 
-@media (max-width: 768px) {
-    .principles__grid { grid-template-columns: 1fr; }
-}
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
 
-.principle-card {
-    padding: 40px;
-    border: 1px solid rgba(244, 239, 227, 0.1);
-    border-radius: 16px;
-    transition: transform 0.3s ease;
-}
+    .contact-info__item h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--forest);
+      margin-bottom: 1rem;
+      font-variation-settings: "opsz" 30, "SOFT" 60;
+    }
 
-.principle-card:hover {
-    transform: translateY(-5px);
-    background: rgba(244, 239, 227, 0.05);
-}
+    .contact-info__item p, 
+    .contact-info__item a {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
 
-.principle-card svg {
-    width: 32px;
-    height: 32px;
-    color: var(--gold-light);
-    margin-bottom: 20px;
-}
+    .contact-info__item a:hover {
+      color: var(--sage);
+    }
 
-.principle-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
+    .contact-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-.principle-card p {
-    font-size: 0.95rem;
-    opacity: 0.8;
-    line-height: 1.6;
-}
+    .contact-socials a {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      color: var(--forest);
+      border-radius: 50%;
+      transition: all var(--t-fast);
+    }
 
+    .contact-socials a:hover {
+      background: var(--forest);
+      color: var(--paper);
+      transform: translateY(-3px);
+    }
 
-/* Footer Gap Fix */
-.newsletter, .site-footer {
-    margin-top: 0 !important;
-}
+    .contact-form-card {
+      background: #fff;
+      padding: 3.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 40px 100px -20px rgba(15, 42, 29, 0.1);
+      border: 1px solid rgba(15, 42, 29, 0.05);
+    }
 
-.about-page section:last-of-type {
-    margin-bottom: 0 !important;
-    padding-bottom: 80px !important;
-}
+    .contact-form-card h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--forest);
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.02em;
+    }
 
-#page {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
+    .contact-form__group {
+      margin-bottom: 1.8rem;
+    }
 
-/* ═══════════════ CONTACT PAGE STYLES ═══════════════ */
-.contact-hero {
-    padding: 140px 0 80px;
-    background: var(--paper);
-    text-align: center;
-}
+    .contact-form__group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 80px;
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 80px var(--gutter);
-}
+    .contact-form__group input,
+    .contact-form__group textarea {
+      width: 100%;
+      background: var(--paper);
+      border: 1px solid rgba(15, 42, 29, 0.08);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      color: var(--ink);
+      transition: all var(--t-fast);
+    }
 
-@media (max-width: 1024px) {
-    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
-}
+    .contact-form__group input:focus,
+    .contact-form__group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+    }
 
-.contact-info__item {
-    margin-bottom: 40px;
-}
+    .contact-form__group input::placeholder,
+    .contact-form__group textarea::placeholder {
+      color: var(--ink-mute);
+      opacity: 0.5;
+    }
 
-.contact-info__item h3 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    color: var(--forest);
-    margin-bottom: 10px;
-}
+    /* RESPONSIVE CONTACT */
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .contact-info {
+        text-align: center;
+        align-items: center;
+      }
+      .contact-socials {
+        justify-content: center;
+      }
+      .contact-form-card {
+        padding: 2.5rem 1.5rem;
+      }
+    }
 
-.contact-info__item p, .contact-info__item a {
-    font-size: 1.1rem;
-    color: var(--ink);
-    opacity: 0.8;
-    text-decoration: none;
-    display: block;
-}
+    .contact-map {
+      height: 500px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
 
-.contact-form-card {
-    background: #fff;
-    padding: 60px;
-    border-radius: 4px;
-    box-shadow: 0 30px 60px rgba(15, 42, 29, 0.05);
-}
+    .contact-map__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 42, 29, 0.4) 0%, rgba(15, 42, 29, 0.8) 100%);
+      z-index: 1;
+    }
 
-.contact-form-card h2 {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    color: var(--forest);
-    margin-bottom: 30px;
-}
+    .contact-map__content {
+      position: relative;
+      z-index: 2;
+      padding: var(--gutter);
+    }
 
-.contact-form__group {
-    margin-bottom: 25px;
-}
+    .contact-map__icon {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
 
-.contact-form__group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gold-deep);
-    margin-bottom: 10px;
-}
-
-.contact-form__group input, .contact-form__group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 4px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form__group input:focus, .contact-form__group textarea:focus {
-    border-color: var(--gold);
-    outline: none;
-}
-
-.contact-socials {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.contact-socials a {
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
-    background: var(--forest);
-    color: var(--paper);
-    border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-.contact-socials a:hover {
-    background: var(--gold);
-}
+    .contact-map__content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    }
+\
 
 
-/* Menu Vertical Centering Fix */
-.header__nav {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 100% !important;
-}
 
-.nav-primary {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-}
 
-.nav-link {
-    display: flex !important;
-    align-items: center !important;
-    height: 100% !important;
-}
+    .contact-page em {
+      font-style: italic;
+      color: var(--sage);
+      font-variation-settings: "opsz" 144, "SOFT" 80;
+    }
+
+
+
+
+

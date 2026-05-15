@@ -1,13 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     /* ═════════════════ HEADER SCROLL ═════════════════ */
     const header = document.getElementById('siteHeader');
-    let lastScroll = 0;
     if (header) {
         window.addEventListener('scroll', () => {
             const y = window.scrollY;
             if (y > 20) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
-            lastScroll = y;
         }, { passive: true });
     }
 
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function openMega(item) {
         clearTimeout(closeTimer);
-        // Close others
         megaItems.forEach(i => {
             if (i !== item) {
                 i.classList.remove('is-open');
@@ -63,19 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeTimer = setTimeout(closeAllMega, 220);
             });
         }
-        // Click toggle (touch / accessibility)
         const btn = item.querySelector('.nav-link');
         if (btn) {
             btn.addEventListener('click', (e) => {
+                if (btn.tagName === 'A' && !e.target.closest('svg')) return;
                 e.preventDefault();
                 if (item.classList.contains('is-open')) closeAllMega();
                 else openMega(item);
             });
         }
     });
-    if (backdrop) {
-        backdrop.addEventListener('click', closeAllMega);
-    }
+    if (backdrop) backdrop.addEventListener('click', closeAllMega);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllMega(); });
 
     /* ═════════════════ MOBILE PANEL ═════════════════ */
@@ -96,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeMobile) closeMobile.addEventListener('click', () => toggleMobile(false));
     if (openFromBottom) openFromBottom.addEventListener('click', (e) => { e.preventDefault(); toggleMobile(true); });
 
-    /* Mobile accordion */
     document.querySelectorAll('.mobile-panel__nav .m-nav-toggle').forEach(btn => {
         if (btn.tagName !== 'BUTTON') return;
         btn.addEventListener('click', () => {
@@ -116,26 +110,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!viewport || !prev || !next) return;
 
         const track = viewport.querySelector('.slider__track');
-        const cards = Array.from(track.children);
-        const total = cards.length;
-
+        if (!track) return;
+        
         function getStep() {
-            const card = cards[0];
+            const firstCard = track.firstElementChild;
+            if (!firstCard) return 0;
             const gap = parseFloat(getComputedStyle(track).gap) || 0;
-            return card.offsetWidth + gap;
+            return firstCard.offsetWidth + gap;
         }
 
         function currentIndex() {
             const step = getStep();
+            if (step === 0) return 0;
             return Math.round(viewport.scrollLeft / step);
         }
 
         function updateUI() {
+            const total = track.children.length;
             const idx = currentIndex();
-            const max = total - 1;
             const padded = String(idx + 1).padStart(2, '0');
             const totalPadded = String(total).padStart(2, '0');
-            if(counter) counter.innerHTML = `${padded} <em>/ ${totalPadded}</em>`;
+            if (counter) counter.innerHTML = `${padded} <em>/ ${totalPadded}</em>`;
 
             prev.disabled = viewport.scrollLeft <= 4;
             next.disabled = viewport.scrollLeft >= viewport.scrollWidth - viewport.clientWidth - 4;
@@ -154,14 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollTimer = setTimeout(updateUI, 80);
         }, { passive: true });
 
-        // Keyboard navigation when slider is focused
         viewport.setAttribute('tabindex', '0');
         viewport.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
             if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
         });
 
-        // Drag-to-scroll (desktop)
         let isDown = false, startX = 0, startScroll = 0;
         viewport.addEventListener('mousedown', (e) => {
             if (e.target.closest('a, button, input')) return;
@@ -201,28 +194,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 showcases.forEach(s => s.classList.toggle('active', s.dataset.show === id));
                 if (counter) {
                     const num = String(idx + 1).padStart(2, '0');
-                    counter.innerHTML = `${num} <em>/ 04</em>`;
+                    counter.innerHTML = `${num} <em>/ ${String(tabs.length).padStart(2, '0')}</em>`;
                 }
             });
         });
     })();
 
-    /* ═════════ Filter chip toggle ═════════ */
+    /* ═════════ Misc Interactions ═════════ */
     document.querySelectorAll('.fchip').forEach(chip => {
         chip.addEventListener('click', () => chip.classList.toggle('active'));
     });
-
-    /* ═════════ Toggle switches ═════════ */
     document.querySelectorAll('.ftoggle').forEach(t => {
         t.addEventListener('click', () => t.classList.toggle('active'));
-    });
-
-    /* ═════════ Favorite buttons ═════════ */
-    document.querySelectorAll('.tcard__fav').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            btn.classList.toggle('active');
-        });
     });
 });

@@ -1,3 +1,122 @@
-.lazhem-row{border:1px solid #ccd0d4;padding:12px;margin:10px 0;background:#fff}
-.lazhem-row label{display:block;margin:6px 0}
-.lazhem-row input,.lazhem-row textarea{width:100%}
+.lazhem-region-meta-field .description {
+	margin-top: 6px;
+}
+.lazhem-region-meta-field input.large-text {
+	width: 100%;
+	max-width: 36rem;
+}
+.lazhem-meta-container {
+    background: #fff;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    clear: both;
+}
+
+/* Tabs */
+.lazhem-tabs-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #f0f0f1;
+    border-bottom: 1px solid #ccd0d4;
+}
+.lazhem-tabs-nav li {
+    margin: 0;
+}
+.lazhem-tabs-nav a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #50575e;
+    font-weight: 600;
+    border-right: 1px solid #ccd0d4;
+}
+.lazhem-tabs-nav li.active a {
+    background: #fff;
+    color: #2271b1;
+    margin-bottom: -1px;
+}
+
+.lazhem-tab-content {
+    display: none;
+    padding: 20px;
+}
+.lazhem-tab-content.active {
+    display: block;
+}
+
+/* Fields */
+.lazhem-field-row {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+.lazhem-field-row label {
+    width: 200px;
+    font-weight: 600;
+    padding-top: 8px;
+}
+.lazhem-field-row .field-input {
+    flex-grow: 1;
+}
+.lazhem-field-row input[type="text"], 
+.lazhem-field-row input[type="number"], 
+.lazhem-field-row textarea {
+    width: 100%;
+}
+
+/* Variations */
+.lazhem-variation-item {
+    background: #f9f9f9;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative;
+}
+.lazhem-variation-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.remove-variation {
+    color: #d63638;
+    cursor: pointer;
+}
+
+/* Media Preview */
+.lazhem-media-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+.lazhem-preview-item {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.lazhem-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lazhem-preview-item .remove-img {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #d63638;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 14px;
+}

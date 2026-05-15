@@ -1,0 +1,6 @@
+
+    .contact-page em {
+      font-style: italic;
+      color: var(--sage);
+      font-variation-settings: "opsz" 144, "SOFT" 80;
+    }

@@ -1,0 +1,38 @@
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 104
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 104
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 104
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 104
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 233
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 233
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 233
+[14-May-2026 11:59:34 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 233
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 108
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 108
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 108
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 108
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 237
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 237
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "slug" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 237
+[14-May-2026 12:07:24 UTC] PHP Warning:  Attempt to read property "name" on array in /var/www/html/wp-content/themes/nextcore/template-home.php on line 237
+[14-May-2026 12:28:29 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:05 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:06 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:10 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:10 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:11 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:11 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:12 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:12 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[14-May-2026 12:30:12 UTC] PHP Fatal error:  Cannot redeclare ece_home() (previously declared in /var/www/html/wp-content/plugins/eternal-content-editor/eternal-content-editor.php:19) in /var/www/html/wp-content/themes/nextcore/functions.php on line 52
+[15-May-2026 08:36:28 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 68
+[15-May-2026 08:36:28 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 73
+[15-May-2026 08:36:28 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 68
+[15-May-2026 08:36:28 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 73
+[15-May-2026 08:37:33 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 68
+[15-May-2026 08:37:33 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 73
+[15-May-2026 08:37:33 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 68
+[15-May-2026 08:37:33 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 73
+[15-May-2026 08:38:32 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 68
+[15-May-2026 08:38:32 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 73
+[15-May-2026 08:38:32 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 68
+[15-May-2026 08:38:32 UTC] PHP Warning:  Undefined variable $v_name in /var/www/html/wp-content/plugins/lazhem-listings/templates/detail.php on line 73

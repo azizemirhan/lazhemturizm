@@ -5,25 +5,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Lazhem_Settings {
 	public static function register_menu() {
-		add_menu_page(
-			'Lazhem Ilanlari',
-			'Lazhem Ilanlari',
-			'manage_options',
-			'lazhem-listings',
-			array( __CLASS__, 'render_dashboard' ),
-			'dashicons-admin-multisite',
-			26
+		// Ayrı bir ana menü oluşturmak yerine, Ayarlar'ı CPT menüsünün altına ekliyoruz
+		add_submenu_page( 
+			'edit.php?post_type=tur', // İlanlar menüsünün altına bağla
+			'Ayarlar', 
+			'Ayarlar', 
+			'manage_options', 
+			'lazhem-listings-settings', 
+			array( __CLASS__, 'render_settings' ) 
 		);
-
-		add_submenu_page( 'lazhem-listings', 'Bungalovlar', 'Bungalovlar', 'edit_posts', 'edit.php?post_type=bungalov' );
-		add_submenu_page( 'lazhem-listings', 'Turlar', 'Turlar', 'edit_posts', 'edit.php?post_type=tur' );
-		add_submenu_page( 'lazhem-listings', 'Paketler', 'Paketler', 'edit_posts', 'edit.php?post_type=paket' );
-		add_submenu_page( 'lazhem-listings', 'Talepler', 'Talepler', 'edit_posts', 'edit.php?post_type=lazhem_talep' );
-		add_submenu_page( 'lazhem-listings', 'Ayarlar', 'Ayarlar', 'manage_options', 'lazhem-listings-settings', array( __CLASS__, 'render_settings' ) );
-	}
-
-	public static function render_dashboard() {
-		echo '<div class="wrap"><h1>Lazhem Ilanlari</h1><p>Bungalov, tur, paket ve talep yonetimi bu menu altindan yapilir.</p></div>';
 	}
 
 	public static function register_settings() {

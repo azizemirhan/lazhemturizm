@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlanlar - Lazhem Turizm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest: #0F2A1D;
+            --forest-deep: #061A11;
+            --forest-soft: #1B3A28;
+            --sage: #2D5A3D;
+            --moss: #5C7E62;
+            --moss-light: #8FA593;
+            --gold: #C9A961;
+            --gold-light: #E5CB8E;
+            --gold-deep: #9C7E3F;
+            --paper: #FAF7EF;
+            --cream: #F4EFE3;
+            --bone: #EBE3CF;
+            --ink: #0A1410;
+            --ink-soft: #2A3530;
+            --ink-mute: #6B7670;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --container: 1440px;
+            --gutter: clamp(1.25rem, 4vw, 3rem);
+            --radius: 12px;
+            --t: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-body);
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.5;
+        }
+
+        .wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+
+        /* Header / Breadcrumb */
+        .listing-header {
+            padding: 4rem 0 2rem;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800' fill='none' stroke='%23C9A961' stroke-width='0.4' opacity='0.2'><path d='M0 200 Q 200 100 400 200 T 800 200'/><path d='M0 400 Q 200 300 400 400 T 800 400'/></svg>");
+            background-position: center;
+        }
+        .breadcrumb {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--moss);
+            margin-bottom: 1rem;
+        }
+        .listing-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            color: var(--forest);
+            margin-bottom: 0.5rem;
+        }
+        .listing-title em { font-style: italic; color: var(--sage); }
+
+        /* Main Layout */
+        .listing-grid-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            padding-bottom: 5rem;
+        }
+
+        /* Sidebar Filters */
+        .filters-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        .filter-group {
+            background: white;
+            border: 1px solid var(--bone);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(15, 42, 29, 0.03);
+        }
+        .filter-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--forest);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .filter-options { display: flex; flex-direction: column; gap: 0.8rem; }
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--ink-soft);
+            transition: color var(--t);
+        }
+        .filter-option:hover { color: var(--sage); }
+        .filter-option input {
+            accent-color: var(--sage);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Listing Controls */
+        .listing-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--bone);
+        }
+        .result-count { font-size: 0.9rem; color: var(--ink-mute); }
+        .sort-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--bone);
+            border-radius: 100px;
+            background: white;
+            font-size: 0.9rem;
+            color: var(--forest);
+            cursor: pointer;
+        }
+
+        /* Grid */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Design */
+        .item-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(15, 42, 29, 0.05);
+            transition: transform var(--t), box-shadow var(--t);
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+        }
+        .item-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 42, 29, 0.1);
+        }
+        .item-card__img-wrap {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+        .item-card__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .item-card:hover .item-card__img { transform: scale(1.1); }
+        
+        .item-card__badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(15, 42, 29, 0.85);
+            backdrop-filter: blur(8px);
+            color: var(--gold-light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .item-card__content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .item-card__type {
+            font-size: 0.7rem;
+            color: var(--gold-deep);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .item-card__title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            color: var(--forest);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .item-card__meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--ink-mute);
+            font-size: 0.85rem;
+        }
+        .item-card__meta-item { display: flex; align-items: center; gap: 0.4rem; }
+        .item-card__meta-item svg { width: 16px; height: 16px; opacity: 0.6; }
+
+        .item-card__footer {
+            margin-top: auto;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--paper);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .item-card__price { display: flex; flex-direction: column; }
+        .price-label { font-size: 0.7rem; color: var(--ink-mute); }
+        .price-value {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--sage);
+            font-weight: 600;
+        }
+        .item-card__actions { display: flex; gap: 0.5rem; }
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--bone);
+            transition: all 0.3s;
+        }
+        .btn-icon:hover { background: var(--forest); color: white; border-color: var(--forest); }
+        .btn-detail {
+            background: var(--forest);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-detail:hover { background: var(--forest-deep); transform: translateY(-2px); }
+
+        @media (max-width: 1024px) {
+            .listing-grid-layout { grid-template-columns: 1fr; }
+            .filters-sidebar { display: none; } /* Mobile filters would be a drawer */
+        }
+    </style>
+</head>
+<body>
+
+    <section class="listing-header">
+        <div class="wrap">
+            <nav class="breadcrumb">Anasayfa / İlanlar</nav>
+            <h1 class="listing-title">Doğayı <em>Keşfedin</em></h1>
+            <p style="color: var(--ink-mute); max-width: 600px;">Karadeniz'in en seçkin bungalovları, unutulmaz turları ve özel balayı paketleri sizi bekliyor.</p>
+        </div>
+    </section>
+
+    <main class="wrap">
+        <div class="listing-grid-layout">
+            
+            <!-- Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filter-group">
+                    <h3 class="filter-title">İçerik Tipi</h3>
+                    <div class="filter-options">
+                        <label class="filter-option"><input type="checkbox" checked> Bungalovlar</label>
+                        <label class="filter-option"><input type="checkbox" checked> Turlar</label>
+                        <label class="filter-option"><input type="checkbox"> Paketler</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-title">Bölgeler</h3>
+                    <div class="filter-options">
+                        <label class="filter-option"><input type="checkbox"> Ayder Yaylası</label>
+                        <label class="filter-option"><input type="checkbox"> Pokut Yaylası</label>
+                        <label class="filter-option"><input type="checkbox"> Fırtına Vadisi</label>
+                        <label class="filter-option"><input type="checkbox"> Batum</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3 class="filter-title">Fiyat Aralığı</h3>
+                    <input type="range" style="width: 100%; accent-color: var(--sage);">
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.8rem; color: var(--ink-mute);">
+                        <span>₺0</span>
+                        <span>₺50.000+</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Listing Area -->
+            <div class="listing-content">
+                <div class="listing-controls">
+                    <div class="result-count">Toplam <strong>12</strong> sonuç listeleniyor</div>
+                    <select class="sort-select">
+                        <option>Önerilen Sıralama</option>
+                        <option>Fiyat: Düşükten Yükseğe</option>
+                        <option>Fiyat: Yüksekten Düşüğe</option>
+                    </select>
+                </div>
+
+                <div class="items-grid">
+                    
+                    <!-- Card 1 -->
+                    <a href="#" class="item-card">
+                        <div class="item-card__img-wrap">
+                            <span class="item-card__badge">Popüler</span>
+                            <img src="https://images.unsplash.com/photo-1587061949733-762439dec77a?q=80&w=2000&auto=format&fit=crop" alt="Bungalov" class="item-card__img">
+                        </div>
+                        <div class="item-card__content">
+                            <span class="item-card__type">Bungalov</span>
+                            <h2 class="item-card__title">Ayder Manzaralı Lüks Dağ Evi</h2>
+                            <div class="item-card__meta">
+                                <div class="item-card__meta-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Ayder Yaylası
+                                </div>
+                                <div class="item-card__meta-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                    2-4 Kişilik
+                                </div>
+                            </div>
+                            <div class="item-card__footer">
+                                <div class="item-card__price">
+                                    <span class="price-label">Gecelik</span>
+                                    <span class="price-value">₺4.500</span>
+                                </div>
+                                <div class="item-card__actions">
+                                    <div class="btn-detail">İncele</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="#" class="item-card">
+                        <div class="item-card__img-wrap">
+                            <span class="item-card__badge" style="background: var(--gold-deep); color: white;">Balayı Özel</span>
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop" alt="Tur" class="item-card__img">
+                        </div>
+                        <div class="item-card__content">
+                            <span class="item-card__type">Paket</span>
+                            <h2 class="item-card__title">Masalsı Balayı & Pokut Turu</h2>
+                            <div class="item-card__meta">
+                                <div class="item-card__meta-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    3 Gece 4 Gün
+                                </div>
+                            </div>
+                            <div class="item-card__footer">
+                                <div class="item-card__price">
+                                    <span class="price-label">Paket Fiyatı</span>
+                                    <span class="price-value">₺18.900</span>
+                                </div>
+                                <div class="item-card__actions">
+                                    <div class="btn-detail">İncele</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="#" class="item-card">
+                        <div class="item-card__img-wrap">
+                            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop" alt="Tur" class="item-card__img">
+                        </div>
+                        <div class="item-card__content">
+                            <span class="item-card__type">Tur</span>
+                            <h2 class="item-card__title">Günübirlik Batum Kültür Turu</h2>
+                            <div class="item-card__meta">
+                                <div class="item-card__meta-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                    Gürcistan
+                                </div>
+                            </div>
+                            <div class="item-card__footer">
+                                <div class="item-card__price">
+                                    <span class="price-label">Kişi Başı</span>
+                                    <span class="price-value">₺1.200</span>
+                                </div>
+                                <div class="item-card__actions">
+                                    <div class="btn-detail">İncele</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

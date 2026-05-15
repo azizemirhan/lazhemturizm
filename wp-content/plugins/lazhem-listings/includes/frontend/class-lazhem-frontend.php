@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Lazhem_Frontend {
 	public static function register_handlers() {
-		add_action( 'admin_post_nopriv_lazhem_inquiry_submit', array( __CLASS__, 'handle_inquiry' ) );
 		add_action( 'admin_post_lazhem_inquiry_submit', array( __CLASS__, 'handle_inquiry' ) );
+		add_action( 'admin_post_nopriv_lazhem_inquiry_submit', array( __CLASS__, 'handle_inquiry' ) );
 	}
 
 	public static function enqueue() {
